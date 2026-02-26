@@ -23,19 +23,18 @@ body {
     background-color: var(--escuro);
     color: var(--claro);
     overflow-x: hidden;
-    padding-top: 90px;
 }
 
 .navegaçao {
     position: fixed;
     top: 0;
-    width: 100%;
     background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    right: 0;
     z-index: 100;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 1.5rem;
 }
 
 .menu {
@@ -48,9 +47,9 @@ body {
 @media (max-width: 768px) {
 
     .menu {
-        flex-wrap: nowrap;
-        gap: 1.5rem;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
     }
 
     .btn-cv {
@@ -129,9 +128,9 @@ h1 {
 }
 
 @keyframes typing {
-    from { width: 0 }
-    
-    to { width: 21ch }
+    from {
+        width: 0;
+    }
 }
 
 @keyframes blinking {
