@@ -43,22 +43,6 @@ body {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2.5rem;
-    }
-
-    .btn-cv {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-}
-
 .link-menu {
     text-decoration: none;
     color: var(--claro);
