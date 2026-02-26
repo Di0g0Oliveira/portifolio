@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Diogo Oliveira, Desenvolvedor Front-End especializado em HTML, CSS, JavaScript e React.">
+    <meta name="description"
+        content="Portfólio de Diogo Oliveira, Desenvolvedor Front-End especializado em HTML, CSS, JavaScript e React.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
@@ -23,25 +24,18 @@
             <li><a href="#contato" class="link-menu">Contato</a></li>
 
             <li>
-                <a href="https://github.com/Di0g0Oliveira" class="link-menu" target="_blank">
+                <a href="https://github.com/Doyudy" class="link-menu" target="_blank">
                     <i class="fa-brands fa-github"></i>
                 </a>
             </li>
 
             <li>
-                <a href="https://www.linkedin.com/in/diogo-oliveira-374839306/"
-                    class="link-menu" target="_blank">
+                <a href="https://www.linkedin.com/in/diogo-oliveira-374839306/" class="link-menu" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
             </li>
 
-            <li>
-                <a href="curriculo/Diogo-Oliveira-FrontEnd-2026.pdf"
-                    download
-                    class="btn-cv">
-                    Baixar Currículo
-                </a>
-            </li>
+
         </ul>
     </nav>
 
@@ -49,9 +43,12 @@
         <div data-aos="flip-left">
             <img src="img/icon.jpg" alt="Foto de Diogo Oliveira" class="perfil">
         </div>
-
         <h1>Diogo Oliveira</h1>
         <p class="sub-titulo">Desenvolvedor Front-End</p>
+        <a href="curriculo/Diogo-Oliveira-FrontEnd-2026.pdf" download class="btn-cv">
+            Baixar Currículo
+        </a>
+
     </main>
 
     <section id="sobre" class="sobre">
@@ -127,38 +124,31 @@
             <h2 class="contatos-titulo">Entre em Contato</h2>
         </div>
 
-        <form id="formulario"
-      action="https://formsubmit.co/diogooiii560@gmail.com"
-      method="POST"
-      class="formulario-contato">
+        <form id="formulario" action="https://formsubmit.co/diogooiii560@gmail.com" method="POST"
+            class="formulario-contato">
 
-    <div class="grupo-form">
-        <input type="text" name="nome" placeholder="Nome"
-               class="campo-form" required>
-    </div>
+            <div class="grupo-form">
+                <input type="text" name="nome" placeholder="Nome" class="campo-form" required>
+            </div>
 
-    <div class="grupo-form">
-        <input type="email" name="email" placeholder="Email"
-               class="campo-form" required>
-    </div>
+            <div class="grupo-form">
+                <input type="email" name="email" placeholder="Email" class="campo-form" required>
+            </div>
 
-    <div class="grupo-form">
-        <textarea name="mensagem"
-                  placeholder="Digite sua Mensagem"
-                  class="campo-form"
-                  rows="6"
-                  required></textarea>
-    </div>
+            <div class="grupo-form">
+                <textarea name="mensagem" placeholder="Digite sua Mensagem" class="campo-form" rows="6"
+                    required></textarea>
+            </div>
 
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="Novo contato do Portfólio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Novo contato do Portfólio">
 
-    <button type="submit" class="btn" id="btn-enviar">
-        Enviar E-mail
-    </button>
+            <button type="submit" class="btn" id="btn-enviar">
+                Enviar E-mail
+            </button>
 
-    <p id="mensagem-status" class="mensagem-status"></p>
-</form>
+            <p id="mensagem-status" class="mensagem-status"></p>
+        </form>
     </section>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -169,45 +159,46 @@
         });
 
         const form = document.getElementById("formulario");
-const status = document.getElementById("mensagem-status");
-const botao = document.getElementById("btn-enviar");
+        const status = document.getElementById("mensagem-status");
+        const botao = document.getElementById("btn-enviar");
 
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
 
-    botao.classList.add("loading");
-    botao.textContent = "Enviando...";
+            botao.classList.add("loading");
+            botao.textContent = "Enviando...";
 
-    const dados = new FormData(form);
+            const dados = new FormData(form);
 
-    try {
-        const response = await fetch(form.action, {
-            method: "POST",
-            body: dados,
-            headers: {
-                'Accept': 'application/json'
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: dados,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    status.textContent = "Mensagem enviada com sucesso! 🚀";
+                    status.className = "mensagem-status mensagem-sucesso";
+                    form.reset();
+                } else {
+                    throw new Error("Erro no envio");
+                }
+
+            } catch (error) {
+                status.textContent = "Erro ao enviar. Tente novamente.";
+                status.className = "mensagem-status mensagem-erro";
             }
+
+            botao.classList.remove("loading");
+            botao.textContent = "Enviar E-mail";
         });
-
-        if (response.ok) {
-            status.textContent = "Mensagem enviada com sucesso! 🚀";
-            status.className = "mensagem-status mensagem-sucesso";
-            form.reset();
-        } else {
-            throw new Error("Erro no envio");
-        }
-
-    } catch (error) {
-        status.textContent = "Erro ao enviar. Tente novamente.";
-        status.className = "mensagem-status mensagem-erro";
-    }
-
-    botao.classList.remove("loading");
-    botao.textContent = "Enviar E-mail";
-});
     </script>
-    
-</div>
+
+    </div>
 
 </body>
+
 </html>
