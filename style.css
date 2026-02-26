@@ -34,9 +34,7 @@ body {
     max-width: 100%;
     left: 0;
     right: 0;
-    z-index: 100;
     padding: 1.5rem;
-    overflow-x: hidden;
 }
 
 .menu {
@@ -44,7 +42,6 @@ body {
     list-style: none;
     gap: 3rem;
     justify-content: center;
-    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
