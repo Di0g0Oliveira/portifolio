@@ -129,15 +129,6 @@ h1 {
     animation: typing 2.2s steps(21) forwards, blinking 0.5s infinite step-end alternate;         
 }
 
-@media (max-width: 768px) {
-    .sub-titulo {
-        white-space: normal;
-        border-right: none;
-        animation: none;
-        width: auto;
-    }
-}
-
 @keyframes typing {
     from { width: 0 }
 
