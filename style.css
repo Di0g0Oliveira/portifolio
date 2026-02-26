@@ -41,6 +41,21 @@ body {
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 2.5rem;
+    }
+
+    .btn-cv {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+}
+
 .link-menu {
     text-decoration: none;
     color: var(--claro);
@@ -177,7 +192,7 @@ h1 {
     cursor: pointer;
 }
 
-.projetos-card:hover {
+.projetos-card:hover, .btn-cv:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
     transform: translateY(-10px) scale(1.03);
 }
