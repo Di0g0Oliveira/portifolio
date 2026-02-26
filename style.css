@@ -24,7 +24,6 @@ body {
     background-color: var(--escuro);
     color: var(--claro);
     overflow-x: hidden;
-    padding-top: 90px;
 }
 
 .navegaçao {
@@ -37,7 +36,6 @@ body {
     right: 0;
     z-index: 100;
     padding: 1.5rem;
-    overflow-x: hidden;
 }
 
 .menu {
