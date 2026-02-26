@@ -23,6 +23,8 @@ body {
     background-color: var(--escuro);
     color: var(--claro);
     overflow-x: hidden;
+    padding: 100px;
+    padding-top: 90px;
 }
 
 .navegaçao {
