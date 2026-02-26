@@ -23,6 +23,8 @@ html {
 body {
     background-color: var(--escuro);
     color: var(--claro);
+    overflow-x: hidden;
+    padding-top: 90px;
 }
 
 .navegaçao {
@@ -43,6 +45,7 @@ body {
     list-style: none;
     gap: 3rem;
     justify-content: center;
+    overflow: hidden;
 }
 
 .link-menu {
