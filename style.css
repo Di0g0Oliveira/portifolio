@@ -23,18 +23,19 @@ body {
     background-color: var(--escuro);
     color: var(--claro);
     overflow-x: hidden;
+    padding-top: 90px;
 }
 
 .navegaçao {
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
     width: 100%;
-    max-width: 100%;
-    left: 0;
-    right: 0;
+    background: rgba(15, 23, 42, 0.8);
     z-index: 100;
-    padding: 1.5rem;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
@@ -49,7 +50,7 @@ body {
     .menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2.5rem;
+        gap: 1.7rem;
     }
 
     .btn-cv {
